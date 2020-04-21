@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    style
+        include engi_var_sty.css
+</head>
+
+    
+script.   
+    function show(element){
+    var x = element.querySelector("div").style;
+    if (x.display === "none") {
+        x.display = "block";
+    } else {
+        x.display = "none";
+     }
+    }
+    
+<body>
+    <header class="header">
+        <div class="topbar">
+            <div class="logo">
+                <img src="img/logo.png" alt="my logo">
+            </div>
+            <div class="nav">
+                <ul class="bar">
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/GovtVersity">Public University</a></li>
+                    <li><a href="/PrvVersity">Private University</a></li>
+                    <li><a href="/About">About</a></li>
+                </ul>
+            </div>
+            <div class="sidebar">
+                <input type="text" name="search" placeholder="Search by Name">
+                <button class="btn">Advance Search</button>
+            </div>
+        </div>
+    </header>
+    <div class="content_title">
+        <h1>The List of #{title} University</h1>
+    </div>
+    <div class="tab">
+        <ol>
+            each i in va
+                <li onclick='show(this)'>
+                    <p>#{i.UniversityName}</p> 
+                    <div style="display: none;" >
+                        <ul>
+                            <li>Specialization : #{i.Specialization}</li>
+                            <li>Location : #{i.Location}</li>
+                            <li><a href="/More">More</a></li>
+                        </ul>
+                    </div>
+                    
+                </li>
+        </ol>
+    </div>
+</body>
+
+</html>

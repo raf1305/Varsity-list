@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests</title>
+</head>
+<style>
+    body {
+        /* display:inline-block; */
+        /* background: url('img/bg.jpeg'); */
+        height: 1000px;
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    .bdy {
+        height: 1000px;
+    }
+
+    .con {
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        top: 0px;
+
+
+    }
+
+    .con::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        bottom: 0px;
+        z-index: -1;
+        opacity: .3;
+    }
+
+    .left {
+
+        display: inline;
+    }
+
+    .left span {
+        display: inline-block;
+        border: solid 5px green;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .mid {
+        display: inline;
+    }
+
+    .mid span {
+        display: inline-block;
+        border: solid 5px green;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .right {
+        display: inline;
+    }
+
+    .right span {
+        display: inline-block;
+        border: solid 5px green;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        border: 5px solid green;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .content li {
+        width: fit-content;
+        list-style: none;
+        border: 2px solid black;
+        margin: 2px;
+        padding: 2px;
+    }
+
+    .content ul li:hover {
+        background-color: red;
+        cursor: pointer;
+    }
+
+    .bdy::before {
+        content: "";
+        background: url('img/bg.jpeg') no-repeat center center/cover;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: .7;
+    }
+
+    .advance {
+        display: block;
+        border: 2px green solid;
+    }
+
+    .advance ul input {
+        display: block;
+    }
+
+    .advance2 {
+        display: none;
+    }
+
+    .right {
+        margin: 5px;
+    }
+
+    #click {
+        position: absolute;
+        right: 134px;
+
+    }
+
+</style>
+<script>
+    function advance(elm) {
+        
+        var x=elm.querySelector("div").style;
+        //console.log(elm.getAttribute('style'));
+        //var x = document.getElementById("advancesearch");
+        if (x.display === "none") {
+            x.display = "block";
+        } else {
+            x.display = "none";
+        }
+    }
+
+    function conA(elm) {
+        var x = elm.getAttribute('value');
+        if(x=='1'){
+
+            console.log("my Ass");
+        }
+    }
+</script>
+
+<body>
+    <div class="bdy">
+        <div class="con">
+            <div class="left">
+                <span>left</span>
+            </div>
+            <div class="mid">
+                <span>I am mid</span>
+            </div>
+            <div class="right">
+                <ul>
+                    <li onclick="advance(this)" id="1" value="2"> 
+                        <p>Tap me</p> 
+                        <div style="display: none;" >
+                            <ul>
+                                <li>Department</li>
+                                <li>Location</li>
+                                <li>District</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="advance">
+            <div id="advancesearch" class="advance2" style="display: none;">
+                <ul>
+                    <input type="text" placeholder="Department">
+                    <input type="text" placeholder="District">
+                    <button>Search</button>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <ul>
+                <li value="1" onclick="conA(this)">A</li>
+                <li> <a href="/engi">Engineering</a></li>
+                <li onclick="window.location = 'engi_var.html'">C</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
