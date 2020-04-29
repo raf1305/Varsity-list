@@ -50,9 +50,16 @@ script.
                     <p>#{i.UniversityName}</p> 
                     <div style="display: none;" >
                         <ul>
+                            
                             <li>Specialization : #{i.Specialization}</li>
                             <li>Location : #{i.Location}</li>
-                            <li><a href="/More">More</a></li>
+                            <!-- <li><a href="/More?q=#{i.UniversityName}">More</a></li> -->
+                            <form action="/More" method="POST">
+                                <div class="fixed" style="display: none;">
+                                    <input type="text" name="name" value="#{i.Nickname}">
+                                </div>
+                                <button>More</button>
+                            </form>
                         </ul>
                     </div>
                     

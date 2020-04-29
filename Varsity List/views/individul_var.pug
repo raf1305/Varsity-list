@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    style
+        include engi_var_sty.css
+</head>
+
+style.
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .tab{
+    display:flex;
+    justify-content:center;
+    background-color:grey;
+    }
+script.   
+    function show(element){
+    var x = element.querySelector("div").style;
+    if (x.display === "none") {
+        x.display = "block";
+    } else {
+        x.display = "none";
+     }
+    }
+    
+<body>
+    <header class="header">
+        <div class="topbar">
+            <div class="logo">
+                <img src="img/logo.png" alt="my logo">
+            </div>
+            <div class="nav">
+                <ul class="bar">
+                    <li><a href="/Home">Home</a></li>
+                    <li><a href="/GovtVersity">Public University</a></li>
+                    <li><a href="/PrvVersity">Private University</a></li>
+                    <li><a href="/About">About</a></li>
+                </ul>
+            </div>
+            <div class="sidebar">
+                <input type="text" name="search" placeholder="Search by Name">
+                <button class="btn">Advance Search</button>
+            </div>
+        </div>
+    </header>
+    <div class="content_title">
+        <h1>The Details of #{va.UniversityName}</h1>
+    </div>
+    <div class="tab">
+        table
+          tr
+            th Nickname
+            th Founded
+            th Location
+            th Specialization
+            th Type
+            th link
+        
+            tr
+              td #{va.Nickname}
+              td #{va.Founded}
+              td #{va.Location}
+              td #{va.Specialization}
+              td #{va.Type}
+              td
+                a(href=va.Link) #{va.Link} 
+                    
+              
+    </div>
+    <div>
+        <ul>
+            <li>Departments</li>
+            <li>Admission Circulars</li>
+        </ul>
+    </div>
+</body>
+
+</html>
