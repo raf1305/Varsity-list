@@ -4,8 +4,6 @@ app.use(express.static(__dirname));
 const port = 80;
 //html
 const fs = require('fs')
-const filecontent = fs.readFileSync('proj1.html')
-const page2=fs.readFileSync('engi_var.html')
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
@@ -18,8 +16,8 @@ var con = mysql.createConnection({
   password: "1305",
   database: "hello"
 });
-
 con.connect();
+
 //pug
 app.set('view engine', 'pug');
 app.set('views', './views')
@@ -27,17 +25,19 @@ app.set('views', './views')
 
 
 app.get("/", (req, res)=>{ 
-    res.status(200).end(filecontent);
+    
+    res.status(200).render('homepage_main.pug');
+    
 });
 
 app.get("/Home", (req, res)=>{ 
-    res.status(200).end(filecontent);
+    res.status(200).render('homepage_main.pug');
 });
 
-app.get("/GovtVersity", (req, res)=>{
+app.get("/Public", (req, res)=>{
     let str_fi=new Object();
     
-    con.query('select UniversityName from hello.all_var_from_wiki where Type="Public"', function (error, results, fields) {
+    con.query('select * from hello.all_var_from_wiki where Type="Public"', function (error, results, fields) {
         if (error) throw error;
         //console.log(results);
         const params={'va':results,'title':'Public'};
@@ -47,9 +47,9 @@ app.get("/GovtVersity", (req, res)=>{
 
 });
 
-app.get("/PrvVersity", (req, res)=>{
+app.get("/Private", (req, res)=>{
     let str_fi=new Object();
-    con.query('select UniversityName from hello.all_var_from_wiki where Type="Private"', function (error, results, fields) {
+    con.query('select * from hello.all_var_from_wiki where Type="Private"', function (error, results, fields) {
         if (error) throw error;
         //console.log(results);
         const params={'va':results,'title':'Private'};
@@ -58,7 +58,7 @@ app.get("/PrvVersity", (req, res)=>{
 
 });
 
-app.get("/EngineeringVarsity", (req, res)=>{
+app.get("/Engineering", (req, res)=>{
     let str_fi=new Object();
     con.query('select * from hello.all_var_from_wiki where Specialization Like "%Engineering%"', function (error, results, fields) {
         if (error) throw error;
@@ -69,9 +69,9 @@ app.get("/EngineeringVarsity", (req, res)=>{
 
 });
 
-app.get("/AgriculturalVarsity", (req, res)=>{
+app.get("/Agricultural", (req, res)=>{
     let str_fi=new Object();
-    con.query('select UniversityName from hello.all_var_from_wiki where Specialization Like "%Agricultural%"', function (error, results, fields) {
+    con.query('select * from hello.all_var_from_wiki where Specialization Like "%Agricultural%"', function (error, results, fields) {
         if (error) throw error;
         //console.log(results);
         const params={'va':results,'title':'Agricultural'};
@@ -81,7 +81,7 @@ app.get("/AgriculturalVarsity", (req, res)=>{
 });
 app.get("/Medical", (req, res)=>{
     let str_fi=new Object();
-    con.query('select UniversityName from hello.all_var_from_wiki where Specialization Like "%Medical%"', function (error, results, fields) {
+    con.query('select * from hello.all_var_from_wiki where Specialization Like "%Medical%"', function (error, results, fields) {
         if (error) throw error;
         //console.log(results);
         const params={'va':results,'title':'Medical'};
@@ -89,10 +89,10 @@ app.get("/Medical", (req, res)=>{
     });
 
 });
-app.get("/GeneralVarsity", (req, res)=>{
+app.get("/General", (req, res)=>{
     //console.log(req.body)
     let str_fi=new Object();
-    con.query('select UniversityName from hello.all_var_from_wiki where Specialization Like "%General%"', function (error, results, fields) {
+    con.query('select * from hello.all_var_from_wiki where Specialization Like "%General%"', function (error, results, fields) {
         if (error) throw error;
         //console.log(results);
         const params={'va':results,'title':'General'};
@@ -101,10 +101,10 @@ app.get("/GeneralVarsity", (req, res)=>{
 
 });
 
-app.get("/Science&TechnologyVarsity", (req, res)=>{
+app.get("/Science&Technology", (req, res)=>{
     let str_fi=new Object();
     console.log(req.body);
-    con.query('select UniversityName from hello.all_var_from_wiki where Specialization Like "%Technology%"', function (error, results, fields) {
+    con.query('select * from hello.all_var_from_wiki where Specialization Like "%Technology%"', function (error, results, fields) {
         if (error) throw error;
         //console.log(results);
         const params={'va':results,'title':'Science & Technology'};
