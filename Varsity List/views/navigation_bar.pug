@@ -5,72 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    block style
+      style
+        include navigation_bar_css.css
 </head>
-style.
-    body {
-        margin: 0px;
-        padding: 0px;
-    }
 
-    #my_logo {
-        margin: 0px;
-        padding: 0px;
-        height: 100px;
-        width: 100px;
-    }
-
-    .logo img {
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-        margin-left: 15px;
-    }
-
-    #navigation_id {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: aqua;
-    }
-
-    #nav_options ul {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    #nav_options ul li {
-        display: inline-block;
-        list-style: none;
-
-    }
-
-    #nav_options ul li a {
-        text-decoration: none;
-        margin: 15px;
-        padding: 5px;
-
-    }
-
-    #nav_options ul li a:hover {
-        border: 3px solid brown;
-        border-radius: 13px;
-        color: black;
-        background-color: white;
-    }
-    #commont{
-        position: fixed;
-    }
-    #advance input{
-        display: block;
-    }
-    .btn{
-        border: solid 2px brown;
-        border-radius: 10px;
-        margin:2px;
-        padding: 2px;
-    }
-
-script.
+block script
+  script.
     function show_advance() {
         var x = document.getElementById("advance").style;
         if (x.display === "none") {
@@ -85,14 +26,14 @@ script.
 <body>
     <header class="navigation_bar" id="navigation_id">
         <div class="logo" id="my_logo">
-            <img src="img/logo.jpg" alt="my logo">
+           <a href="http://avernus1305.me/"><img src="img/logo.jpg" alt="my logo"></a> 
         </div>
         <div class="nav_bar" id="nav_options">
             <ul>
                 <li><a href="/Home">Home</a></li>
                 <li><a href="/Public">Public University</a></li>
                 <li><a href="/Private">Private University</a></li>
-                <li><a href="/About">About</a></li>
+                <li><a href="/">About</a></li>
             </ul>
         </div>
         <div class="search" id="search_options">
@@ -112,7 +53,7 @@ script.
             </div>
         </div>
     </header>
-    block content
+    block contents
 </body>
 
 </html>

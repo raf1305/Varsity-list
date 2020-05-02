@@ -1,0 +1,49 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+body::before{
+     content:"";
+     background:url('img/bg4.jpg') center center/cover no-repeat;
+     position:absolute;
+     height:100%;
+     width:100%;
+     top: 0;
+     bottom: 0;
+     z-index: -1;
+     opacity: .6;
+ }
+
+#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#content ul li{
+    list-style: none;
+    
+}
+#content ul li a{
+    display: block;
+    margin: 15px;
+    padding: 15px;
+    border: solid 2px brown;
+    text-decoration: none;
+    border-radius: 18px;
+}
+#content ul li a:hover{
+    color: white;
+    background-color: black;
+}
+#about{
+    text-align: center;
+}
+#about h1{
+    color: white;
+    background-color: black;
+}
+.footer{
+    color: white;
+    background-color: black;
+    text-align: center;
+}

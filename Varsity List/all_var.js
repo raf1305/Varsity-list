@@ -25,9 +25,7 @@ app.set('views', './views')
 
 
 app.get("/", (req, res)=>{ 
-    
     res.status(200).render('homepage_main.pug');
-    
 });
 
 app.get("/Home", (req, res)=>{ 

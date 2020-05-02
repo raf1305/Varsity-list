@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+extends navigation_bar.pug
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    style
-        include engi_var_sty.css
-</head>
+block append style
+  style
+    include engi_var_sty.css
 
-    
-script.   
+
+block append script   
+  script.   
     function show(element){
     var x = element.querySelector("div").style;
     if (x.display === "none") {
@@ -18,28 +14,9 @@ script.
     } else {
         x.display = "none";
      }
-    }
-    
-<body>
-    <header class="header">
-        <div class="topbar">
-            <div class="logo">
-                <img src="img/logo.jpg" alt="my logo">
-            </div>
-            <div class="nav">
-                <ul class="bar">
-                    <li><a href="/Home">Home</a></li>
-                    <li><a href="/Public">Public University</a></li>
-                    <li><a href="/Private">Private University</a></li>
-                    <li><a href="/#">About</a></li>
-                </ul>
-            </div>
-            <div class="sidebar">
-                <input type="text" name="search" placeholder="Search by Name">
-                <button class="btn">Advance Search</button>
-            </div>
-        </div>
-    </header>
+    }  
+
+block contents   
     <div class="content_title">
         <h1>The List of #{title} University</h1>
     </div>
@@ -66,6 +43,3 @@ script.
                 </li>
         </ol>
     </div>
-</body>
-
-</html>
